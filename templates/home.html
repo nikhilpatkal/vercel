@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+
+    <head>
+        <TITLE>
+            home
+        </TITLE>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <script src="{% static 'javascript.js' %}"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="{% static 'st1.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'javascript.js' %}" />
+  
+    </head>
+   
+   
+    <body onload="reverse()">
+   
+        <div class="navbar"id="color1">
+            <div class="port">
+                <div style="background-color:white; border-radius: 50%;width: 44px;text-align: center;cursor: pointer;border: 1px solid gray;margin-left:20px"id="coloe"onclick="light()"title="Dark Mode"> 
+                <i class="fa-solid fa-moon"></i>
+            </div>
+       
+                <h2 id="icon4">Portfolio</h2>
+                <i class="fa-brands fa-linkedin px-3" style="font-size: 25px;" id="icon1"></i>
+                <i class="fa-brands fa-github px-3"style="font-size: 25px;"  id="icon2"></i>
+                <i class="fa-brands fa-medium   px-3" style="font-size: 25px;"id="icon3" ></i>
+            </div>
+           
+            <button class="navbar-toggler hidden_icon text-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"title=" Click me for More Option!">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active  fw-bolder text-dark" aria-current="page" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-bolder text-dark" href="https://drive.google.com/file/d/1UgYui7k_O90krT39pYxWsHfPRYZk-1o6/view?usp=drive_link">Resume</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-Dark fw-bolder text-dark" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled fw-bolder text-dark">Disabled</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled fw-bolder text-dark">Disabled</a>
+                </li>
+              </ul>
+            
+            </div>
+            <div class="nav_item"id="nav_item">
+              <p>“About Me”</p>
+              <p>Resume</p>
+              <p>Certificate</p>
+          </div>
+        </div>
+
+        <div class="hero" id="color2">
+            
+
+            <div class="infor-hero">
+                <p style="font-size: 36px;color: white;"id="s1">HEY, I'M NIKHIL PATKAL</p>
+                <div id="typewriter"style="font-size: 30px;font-weight: 700;color:#B54517">
+                </div>
+
+                <p>A dedicated full-stack developer with<br> proficient knowledge in the Java</p>
+                <a href="https://drive.google.com/file/d/1UgYui7k_O90krT39pYxWsHfPRYZk-1o6/view?usp=drive_link"class="btn1">Get My Resume</a>
+
+            </div>
+           
+          
+
+        </div>
+        <div class="service"id="color3">
+            <span style="padding:25px">
+           <span>The</span>  <span style="color:#B54517 ;">Creative Mind</span><span > Behind Your Next  </span> 
+           <span style="color:#B54517 ;">Project</span>
+        </span>
+        </div>
+        
+
+     <div class="card-section"id="color4">
+      {% for i in card_sec %}
+        <div class="card mt-5 card1" style="width: 18rem;">
+            <img class="card-img-top " src="{{i.card_img}}" alt="Card image cap">
+            <div class="card-body" >
+              <h5 class="card-title" >{{i.card_title}}</h5>
+              <p class="card-text"style="font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;">{{i.card_info}}</p>
+               <a href="{{i.card_button_text}}" class="btn btn-info">View Repo</a>
+            </div>
+          </div>
+          {% endfor %}
+      </div>
+     </div>
+
+
+     <div class="skil-header"id="skil-header">
+    <span><span id="my">My</span>  <span style="color: #B54517;">SkillSet</span></span> 
+     </div>
+
+     <div class="core-language"id="1">
+      <div style="font-size: 24px;font-weight: bold;color:rgb(59, 62, 62);">
+        Core languages
+      </div>
+
+      <div class="skil-icon"id="2">
+        {% for item in core %}
+        <div class="s1">
+        
+          <img src="{{ item.core_img }}" class="lang">
+          <p style="font-size: large;font-weight: bold;">{{item.core_title}}</p>
+         
+        </div>
+        {% endfor %}
+      </div>
+
+      </div>
+
+
+
+     </div>
+
+
+     <div class="core-language" id="3">
+      <div style="font-size: 24px;font-weight: bold;color: rgb(59, 62, 62);">
+        Frontend Technologies
+
+      </div>
+      <div class="skil-icon" id="4">
+        {% for item in front %}
+        <div class="s1">
+          <img src="{{ item.front_img }}" class="lang">
+          <p style="font-size: large;font-weight: bold;">{{item.front_title}}</p>
+        </div>
+        {% endfor %}
+
+       
+      </div>
+
+     </div>
+
+
+
+     <div class="core-language"id="5" style="border-bottom: 1px solid gray;">
+      <div style="font-size: 24px;font-weight: bold;color: rgb(59, 62, 62);;">
+        BackEnd Technologies & Databases
+
+      </div>
+      <div class="skil-icon"id="6" >
+      
+        {% for item in back %}
+        <div class="s1">
+          <img src="{{ item.backend_img }}" class="lang">
+          <p style="font-size: large;font-weight: bold;">{{item.backend_title}}</p>
+        </div>
+        {% endfor %}
+
+          
+      </div>
+
+     </div>
+     
+
+     <div class="Coffee"id="7">
+      <div class="lets">
+        Lets Have A Coffee
+      </div>
+      <form method="POST" action="/about/" >
+        {% csrf_token %}
+      <div class="text1">
+        <input type="text" class="lets-text" placeholder="Enter Name"name="name"required>
+        <input type="text" class="lets-text" placeholder="Enter Email"name="email" required>
+        <textarea class="lets-text area  " placeholder="Type Somthing " name="text"required></textarea>
+        
+        <button onclick="s2()"class="btn btn-primary "style="width:130px">Submit</button>
+      </div>
+    </from>
+     </div>
+    
+  
+
+     <div class="footer">
+      <p style="font-size: 30px;">Get in touch 👋</p>
+      <p>Feel free to email me at <span style="color: rgb(192, 174, 82);">&nbsp;nikhilpatkal9552@gmail.com&nbsp;</span>  about anything.</p>
+      <p>You can also reach me around the web: LinkedIn, Twitter, GitHub.</p>
+     </div>
+     <div class="last">
+        @`2023 Nikhil Patkal. all Ride are Resurved
+     </div>
+
+
+
+
+     
+
+
+    </body>
+</html>
+
+    
+  </body>
+</HTML>
